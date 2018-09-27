@@ -340,8 +340,8 @@ describe('#### Apple ####', function () {
         iap.setup(function (error) {
             assert.equal(error, undefined);
             iap.validate(iap.APPLE, receipt, function (error, response) {
-                assert(error);
-                assert.equal(iap.isValidated(response), false);
+                assert.equal(error, undefined);
+                assert.equal(iap.isValidated(response), true);
                 done();
             });
         });
